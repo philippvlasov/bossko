@@ -1,13 +1,105 @@
 // Import style libraries
 @import "slick.scss";
 @import "bootstrap4.scss";
+@import "colors";
 
+//base styles
+html, body {
+    height: 100%;
+}
 body {
-    padding-top:56px;
+  font-family: sans-serif;
+  color: $color-black;
+  font-size: 18px;
+  background-color: $color-white;
 }
-.footer {
-    margin-top:3rem;
-}
+
 .navbar {
-    border-bottom:1px solid #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
+
+h1, h2 {
+    color: $color-blue;
+    font-weight: bold;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: $bottom-spacing;
+}
+
+h3 {
+}
+
+section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-size: cover;
+  background-position: center;
+}
+
+$bottom-spacing: 40px;
+
+//Hero section
+.hero {
+  background-image: url("/img/shutterstock_1040488600.jpg");
+  padding-top: 170px;
+  form {
+    background: $color-white;
+  }
+}
+
+//Choice section
+.promo {
+  position: relative;
+  margin-bottom: $bottom-spacing;
+  @media (min-width: 768px) {
+    padding-left: 90px;
+  }
+  &-text {
+    margin-top: 20px;
+    @media (min-width: 768px) {
+      padding-right: 50px;
+    }
+  }
+  &-image {
+    display: block;
+    position: static;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+      position: absolute;
+    }
+  }
+}
+//Choice section end
+
+//Service section
+.service {
+    background-image: url('/img/shutterstock_697564588.png');
+}
+.icon {
+    margin-bottom: $bottom-spacing;
+    &-image {
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+    &-text {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+//Service section end
