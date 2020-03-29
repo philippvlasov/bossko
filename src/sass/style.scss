@@ -3,6 +3,9 @@
 @import "bootstrap4.scss";
 @import "colors";
 
+// Variables
+$bottom-spacing: 40px;
+
 //base styles
 html, body {
     height: 100%;
@@ -48,8 +51,6 @@ section {
   background-size: cover;
   background-position: center;
 }
-
-$bottom-spacing: 40px;
 
 //Hero section
 .hero {
