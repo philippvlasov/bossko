@@ -3,6 +3,8 @@
 @import "bootstrap4.scss";
 @import "colors";
 
+//Buttons
+
 // Variables
 $bottom-spacing: 40px;
 
@@ -17,11 +19,28 @@ body {
   background-color: $color-white;
 }
 
-.navbar {
+header {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  background-color: $transparent-blue;
+  
+  .navbar {
+    align-items: flex-end;
+    .navbar-nav {
+      .nav-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .nav-link {
+        padding: 5px 50px;
+        color: $color-white;
+        
+      }
+    }
+  }
 }
 
 h1, h2 {
@@ -43,6 +62,9 @@ h2 {
 }
 
 h3 {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 section {
@@ -98,9 +120,7 @@ section {
         margin: 0 auto 20px auto;
     }
     &-text {
-        text-transform: uppercase;
         text-align: center;
-        font-weight: bold;
     }
 }
 //Service section end
