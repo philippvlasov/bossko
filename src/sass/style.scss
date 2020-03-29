@@ -3,15 +3,41 @@
 @import "bootstrap4.scss";
 @import "colors";
 
+*:focus {
+  outline: none !important;
+}
+
+*:hover {
+  outline: none !important;
+  text-decoration: none !important;
+}
+
 //Buttons
+.btn-submit {
+  width: 292px;
+  height: 49px;
+  background-color: $color-blue;
+  border: 3px solid $color-blue;
+  outline: none;
+  color: $color-white;
+  cursor: pointer;
+}
+
+.btn-moreInfo {
+  background-color: $color-red-btn;
+  border: 3px solid $color-red-btn;
+  margin: 0 auto;
+  display: block;
+}
 
 // Variables
 $bottom-spacing: 40px;
 
 //base styles
 html, body {
-    height: 100%;
+  height: 100%;
 }
+
 body {
   font-family: sans-serif;
   color: $color-black;
@@ -25,27 +51,33 @@ header {
   left: 0;
   width: 100%;
   background-color: $transparent-blue;
-  
+
   .navbar {
     align-items: flex-end;
+
+    img {
+      margin: 0 0 5px 50px;
+    }
+
     .navbar-nav {
       .nav-item {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
       }
+
       .nav-link {
         padding: 5px 50px;
         color: $color-white;
-        
+
       }
     }
   }
 }
 
 h1, h2 {
-    color: $color-blue;
-    font-weight: bold;
+  color: $color-blue;
+  font-weight: bold;
 }
 
 h1 {
@@ -77,10 +109,85 @@ section {
 //Hero section
 .hero {
   background-image: url("/img/shutterstock_1040488600.jpg");
-  padding-top: 170px;
-  form {
-    background: $color-white;
+  padding: 170px 0 0 0;
+
+  .container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 52.93%, rgba(255, 255, 255, 0) 88.47%);
+    padding: 58px 100px;
+
+    h1 {
+      margin-bottom: 58px;
+    }
+
+    form {
+      margin-bottom: 58px;
+      display: flex;
+      justify-content: space-between;
+
+      #area {
+        width: 292px;
+        height: 49px;
+        border: 3px solid $color-blue;
+        text-align: center;
+        color: $color-blue;
+        &::-webkit-input-placeholder {
+          color: $color-blue;
+          text-align: center
+        }
+        &::-moz-placeholder {
+          color: $color-blue;
+          text-align: center
+        }
+        /*Firefox 19+*/
+        &:-moz-placeholder {
+          color: $color-blue;
+          text-align: center
+        }
+        /*Firefox 18-*/
+        &:-ms-input-placeholder {
+          color: $color-blue;
+          text-align: center
+        }
+      }
+
+      select {
+        width: 292px;
+        height: 49px;
+        border: 3px solid $color-blue;
+        color: $color-blue;
+        padding-right: 10px;
+        text-align: center;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        //appearance: none;
+        background-image: url('/img/Select.svg');
+        background-repeat: no-repeat, repeat;
+        background-position: right .7em top 50%, 0 0;
+        background-size: .65em auto, 100%;
+        text-align-last: center;
+      }
   }
+
+  .promotion a{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 59px;
+
+    img {
+      margin-right: 20px;
+    }
+
+    h3 {
+      display: block;
+      border-bottom: 2px solid $color-red;
+      color: $color-red;
+    }
+  }
+}
+
 }
 
 //Choice section
@@ -90,12 +197,14 @@ section {
   @media (min-width: 768px) {
     padding-left: 90px;
   }
+
   &-text {
     margin-top: 20px;
     @media (min-width: 768px) {
       padding-right: 50px;
     }
   }
+
   &-image {
     display: block;
     position: static;
@@ -107,20 +216,25 @@ section {
     }
   }
 }
+
 //Choice section end
 
 //Service section
 .service {
-    background-image: url('/img/shutterstock_697564588.png');
+  background-image: url('/img/shutterstock_697564588.png');
 }
+
 .icon {
-    margin-bottom: $bottom-spacing;
-    &-image {
-        display: block;
-        margin: 0 auto 20px auto;
-    }
-    &-text {
-        text-align: center;
-    }
+  margin-bottom: $bottom-spacing;
+
+  &-image {
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  &-text {
+    text-align: center;
+  }
 }
+
 //Service section end

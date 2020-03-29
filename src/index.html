@@ -2,13 +2,29 @@
 
 <section class="hero">
   <div class="container">
-    <form action="">
-      <h1>уборка любой сложности</h1>
+    <h1>уборка любой сложности</h1>
+    <form action="" id="mainFrom" method="post">
+      <input id="area" type="number" name="area" placeholder="Введите площадь (м.кв)">
+      <select name="cleaningType" id="" required size="1">
+        <option value="0" selected><span>Выберите тип уборки</span></option>
+        <option value="1">Регулярная уборка</option>
+        <option value="2">Генеральная уборка</option>
+        <option value="3">Уборка после ремонта</option>
+        <option value="3">Мойка окон</option>
+      </select>
+      <button class="btn-submit" type="submit"  form="">Уборка от: <span class="calc-price">1500</span> Р</button>
     </form>
+    <div class="promotion">
+      <a href="#choice">
+      <img class="" src="img/Frame.png" alt="">
+      <h3>АКЦИЯ! Спецпредложение по дезинфекции помещений</h3>
+      </a>
+    </div>
+    <a href="#choice"><button class="btn-submit btn-moreInfo">ПОДРОБНЕЕ</button></a>
   </div>
 </section>
 
-<section class="choice">
+<section class="choice" id="choice">
   <div class="container">
     <h2>почему выбирают нас</h2>
     <div class="row">
@@ -22,25 +38,41 @@
       </div>
       <div class="col-md-6">
         <div class="promo">
-          <img src="img/man.svg" alt="man" class="promo-image">
+          <img src="img/Ok.svg" alt="man" class="promo-image">
           <p class="promo-text">
-            Наш менеджер с опытом более 3 лет всегда на месте уборки, и готов решить возникающе вопросы оперативно
+            Мы отвечаем за высокий уровень наших услуг, но Если по каким-то причинам вас не устроит их качество, мы сделаем повторную уборку <b>бесплатно</b>
           </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="promo">
-          <img src="img/man.svg" alt="man" class="promo-image">
+          <img src="img/Vacuum.svg" alt="man" class="promo-image">
           <p class="promo-text">
-            Наш менеджер с опытом более 3 лет всегда на месте уборки, и готов решить возникающе вопросы оперативно
+            В нашем арсенале мы используем передовое оборудование, обеспечивающее самое высокое качество клининга
           </p>
         </div>
       </div>
       <div class="col-md-6">
         <div class="promo">
-          <img src="img/man.svg" alt="man" class="promo-image">
+          <img src="img/Quality_mark.svg" alt="" class="promo-image">
           <p class="promo-text">
-            Наш менеджер с опытом более 3 лет всегда на месте уборки, и готов решить возникающе вопросы оперативно
+            За 6 лет работы мы накопили достаточно обьемный опыт в решении самых нетривиальных задач, постоянно развивая и расширяя перечень услуг клининга
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="promo">
+          <img src="img/Spray.svg" alt="man" class="promo-image">
+          <p class="promo-text">
+            Для уборки мы используем сертифицированные гиппоаллергенные химические средства, отвечающие всем требованиям экологической безопасности
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="promo">
+          <img src="img/Wallet.svg" alt="man" class="promo-image">
+          <p class="promo-text">
+            Мы пользуемся прозрачными схемами оплаты, вы всегда знаете сколько и за что конкретно вы заплатите, мы не включаем в счёт никаких скрытых платежей
           </p>
         </div>
       </div>
@@ -60,20 +92,21 @@
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
-          <img src="img/house1.svg" alt="house1" class="icon-image">
-          <p class="icon-text">офисы</p>
+          <img src="img/houses.svg" alt="house1" class="icon-image">
+          <p class="icon-text">коттеджи</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
-          <img src="img/house1.svg" alt="house1" class="icon-image">
-          <p class="icon-text">офисы</p>
+          <img src="img/Flats.svg" alt="house1" class="icon-image">
+          <p class="icon-text">квартиры</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
-          <img src="img/house1.svg" alt="house1" class="icon-image">
-          <p class="icon-text">офисы</p>
+          <img src="img/Factories.svg" alt="house1" class="icon-image">
+          <p class="icon-text">производственные помещения
+          </p>
         </div>
       </div>
     </div>
