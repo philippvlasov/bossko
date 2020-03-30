@@ -2,49 +2,123 @@
 @import "slick.scss";
 @import "bootstrap4.scss";
 @import "colors";
+@import "buttons";
+@import "variables";
 
-*:focus {
-  outline: none !important;
+//Form start
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .field-item {
+    width: 292px;
+    height: 49px;
+    margin: 0 15px $bottom-spacing 15px;
+    border: 3px solid $color-blue;
+    text-align: center;
+    color: $color-blue;
+    box-sizing: border-box;
+    &::-webkit-input-placeholder {
+      color: $color-blue;
+      text-align: center;
+    }
+    &::-moz-placeholder {
+      color: $color-blue;
+      text-align: center;
+    }
+    /*Firefox 19+*/
+    &:-moz-placeholder {
+      color: $color-blue;
+      text-align: center;
+    }
+    /*Firefox 18-*/
+    &:-ms-input-placeholder {
+      color: $color-blue;
+      text-align: center;
+    }
+    &.btn-submit {
+      @include button;
+    }
+  }
+
+  select {
+    padding-right: 10px;
+    padding: 5px 10px 5px 5px;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-image: url("/img/Select.svg");
+    background-repeat: no-repeat, repeat;
+    background-position: right 0.7em top 50%, 0 0;
+    background-size: 0.65em auto, 100%;
+    text-align-last: center;
+    option {
+      padding: 3px 7px;
+    }
+  }
 }
+//Form end
 
-*:hover {
-  outline: none !important;
-  text-decoration: none !important;
-}
-
-//Buttons
-.btn-submit {
-  width: 292px;
-  height: 49px;
-  background-color: $color-blue;
-  border: 3px solid $color-blue;
-  outline: none;
-  color: $color-white;
-  cursor: pointer;
-}
-
-.btn-moreInfo {
-  background-color: $color-red-btn;
-  border: 3px solid $color-red-btn;
-  margin: 0 auto;
-  display: block;
-}
-
-// Variables
-$bottom-spacing: 40px;
-
-//base styles
-html, body {
+//Base styles
+html,
+body {
   height: 100%;
 }
 
 body {
   font-family: sans-serif;
   color: $color-black;
-  font-size: 18px;
+  font-size: 16px;
   background-color: $color-white;
+  @media (min-width: 576px) {
+    font-size: 18px;
+  }
 }
 
+h1,
+h2 {
+  color: $color-blue;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 58px;
+  @media (min-width: 576px) {
+    font-size: 36px;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: $bottom-spacing;
+}
+
+h3 {
+  font-size: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.text-small {
+  font-size: 14px;
+}
+
+section {
+  padding-top: $bottom-spacing;
+  padding-bottom: $bottom-spacing;
+  background-size: cover;
+  background-position: center;
+}
+//Base styles end
+
+//Header start
 header {
   position: absolute;
   top: 0;
@@ -69,125 +143,44 @@ header {
       .nav-link {
         padding: 5px 50px;
         color: $color-white;
-
       }
     }
   }
 }
-
-h1, h2 {
-  color: $color-blue;
-  font-weight: bold;
-}
-
-h1 {
-  font-size: 36px;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 24px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: $bottom-spacing;
-}
-
-h3 {
-  font-size: 18px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-section {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-size: cover;
-  background-position: center;
-}
+//Header end
 
 //Hero section
 .hero {
   background-image: url("/img/shutterstock_1040488600.jpg");
-  padding: 170px 0 0 0;
 
   .container {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 52.93%, rgba(255, 255, 255, 0) 88.47%);
-    padding: 58px 100px;
-
-    h1 {
-      margin-bottom: 58px;
+    .form-block {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 52.93%, rgba(255, 255, 255, 0) 88.47%);
+      margin-top: 130px;
+      padding: 55px 30px;
+      .btn-moreInfo {
+        @include button-highlight;
+      }
     }
 
-    form {
-      margin-bottom: 58px;
+    .promotion a {
       display: flex;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $bottom-spacing;
 
-      #area {
-        width: 292px;
-        height: 49px;
-        border: 3px solid $color-blue;
-        text-align: center;
-        color: $color-blue;
-        &::-webkit-input-placeholder {
-          color: $color-blue;
-          text-align: center
-        }
-        &::-moz-placeholder {
-          color: $color-blue;
-          text-align: center
-        }
-        /*Firefox 19+*/
-        &:-moz-placeholder {
-          color: $color-blue;
-          text-align: center
-        }
-        /*Firefox 18-*/
-        &:-ms-input-placeholder {
-          color: $color-blue;
-          text-align: center
-        }
+      img {
+        margin-right: 20px;
       }
 
-      select {
-        width: 292px;
-        height: 49px;
-        border: 3px solid $color-blue;
-        color: $color-blue;
-        padding-right: 10px;
-        text-align: center;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        -ms-appearance: none;
-        //appearance: none;
-        background-image: url('/img/Select.svg');
-        background-repeat: no-repeat, repeat;
-        background-position: right .7em top 50%, 0 0;
-        background-size: .65em auto, 100%;
-        text-align-last: center;
+      h3 {
+        display: block;
+        border-bottom: 2px solid $color-red;
+        color: $color-red;
       }
-  }
-
-  .promotion a{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 59px;
-
-    img {
-      margin-right: 20px;
-    }
-
-    h3 {
-      display: block;
-      border-bottom: 2px solid $color-red;
-      color: $color-red;
     }
   }
-}
-
 }
 
 //Choice section
@@ -221,7 +214,7 @@ section {
 
 //Service section
 .service {
-  background-image: url('/img/shutterstock_697564588.png');
+  background-image: url("/img/shutterstock_697564588.png");
 }
 
 .icon {
@@ -237,4 +230,58 @@ section {
   }
 }
 
+.promo-service {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $bottom-spacing;
+  @media (min-width: 576px) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  &__icon {
+  }
+  &__text {
+    margin: 10px 50px;
+    width: 100%;
+    text-align: center;
+    @media (min-width: 576px) {
+      width: auto;
+      text-align: left;
+    }
+  }
+  &__button {
+    background: none;
+    border: none;
+    color: $color-blue;
+    position: relative;
+    padding-right: 50px;
+    cursor: pointer;
+    
+    &:focus, &:active {
+      outline: none;
+      box-shadow: none;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 6px 0 6px 8px;
+      border-color: transparent transparent transparent #007bff;
+    }
+  }
+}
 //Service section end
+
+//Sales section start
+.sales {
+  
+}
+//Sales section end

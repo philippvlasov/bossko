@@ -2,25 +2,18 @@
 
 <section class="hero">
   <div class="container">
-    <h1>уборка любой сложности</h1>
-    <form action="" id="mainFrom" method="post">
-      <input id="area" type="number" name="area" placeholder="Введите площадь (м.кв)">
-      <select name="cleaningType" id="" required size="1">
-        <option value="0" selected><span>Выберите тип уборки</span></option>
-        <option value="1">Регулярная уборка</option>
-        <option value="2">Генеральная уборка</option>
-        <option value="3">Уборка после ремонта</option>
-        <option value="3">Мойка окон</option>
-      </select>
-      <button class="btn-submit" type="submit"  form="">Уборка от: <span class="calc-price">1500</span> Р</button>
-    </form>
-    <div class="promotion">
-      <a href="#choice">
-      <img class="" src="img/Frame.png" alt="">
-      <h3>АКЦИЯ! Спецпредложение по дезинфекции помещений</h3>
-      </a>
+    <div class="form-block">
+      <h1>уборка любой сложности</h1>
+      <partial src="form.html"></partial>
+      <div class="promotion">
+        <a href="#choice">
+          <img class="" src="img/Frame.png" alt="">
+          <h3>АКЦИЯ! Спецпредложение по дезинфекции помещений</h3>
+        </a>
+      </div>
+      <a href="#choice"><button class="btn-submit btn-moreInfo">ПОДРОБНЕЕ</button></a>
     </div>
-    <a href="#choice"><button class="btn-submit btn-moreInfo">ПОДРОБНЕЕ</button></a>
+
   </div>
 </section>
 
@@ -40,7 +33,8 @@
         <div class="promo">
           <img src="img/Ok.svg" alt="man" class="promo-image">
           <p class="promo-text">
-            Мы отвечаем за высокий уровень наших услуг, но Если по каким-то причинам вас не устроит их качество, мы сделаем повторную уборку <b>бесплатно</b>
+            Мы отвечаем за высокий уровень наших услуг, но Если по каким-то причинам вас не устроит их качество, мы
+            сделаем повторную уборку <b>бесплатно</b>
           </p>
         </div>
       </div>
@@ -56,7 +50,8 @@
         <div class="promo">
           <img src="img/Quality_mark.svg" alt="" class="promo-image">
           <p class="promo-text">
-            За 6 лет работы мы накопили достаточно обьемный опыт в решении самых нетривиальных задач, постоянно развивая и расширяя перечень услуг клининга
+            За 6 лет работы мы накопили достаточно обьемный опыт в решении самых нетривиальных задач, постоянно развивая
+            и расширяя перечень услуг клининга
           </p>
         </div>
       </div>
@@ -64,7 +59,8 @@
         <div class="promo">
           <img src="img/Spray.svg" alt="man" class="promo-image">
           <p class="promo-text">
-            Для уборки мы используем сертифицированные гиппоаллергенные химические средства, отвечающие всем требованиям экологической безопасности
+            Для уборки мы используем сертифицированные гиппоаллергенные химические средства, отвечающие всем требованиям
+            экологической безопасности
           </p>
         </div>
       </div>
@@ -72,7 +68,8 @@
         <div class="promo">
           <img src="img/Wallet.svg" alt="man" class="promo-image">
           <p class="promo-text">
-            Мы пользуемся прозрачными схемами оплаты, вы всегда знаете сколько и за что конкретно вы заплатите, мы не включаем в счёт никаких скрытых платежей
+            Мы пользуемся прозрачными схемами оплаты, вы всегда знаете сколько и за что конкретно вы заплатите, мы не
+            включаем в счёт никаких скрытых платежей
           </p>
         </div>
       </div>
@@ -87,101 +84,87 @@
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
           <img src="img/house1.svg" alt="house1" class="icon-image">
-          <p class="icon-text">офисы</p>
+          <h3 class="icon-text">офисы</h3>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
           <img src="img/houses.svg" alt="house1" class="icon-image">
-          <p class="icon-text">коттеджи</p>
+          <h3 class="icon-text">коттеджи</h3>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
           <img src="img/Flats.svg" alt="house1" class="icon-image">
-          <p class="icon-text">квартиры</p>
+          <h3 class="icon-text">квартиры</h3>
         </div>
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="icon">
           <img src="img/Factories.svg" alt="house1" class="icon-image">
-          <p class="icon-text">производственные помещения
-          </p>
+          <h3 class="icon-text">производственные помещения
+          </h3>
         </div>
       </div>
     </div>
     <h2>виды уборки</h2>
-    <div id="accordion1" class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item__heading" id="accordion1Heading1">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#accordion1Collapse1" aria-expanded="true" aria-controls="accordion1Collapse1">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
-        <div id="accordion1Collapse1" class="collapse" aria-labelledby="accordion1Heading1" data-parent="#accordion1">
-          <div class="accordion-item__body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <div class="accordion-item__heading" id="accordion1Heading2">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#accordion1Collapse2" aria-expanded="true" aria-controls="accordion1Collapse2">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
-        <div id="accordion1Collapse2" class="collapse" aria-labelledby="accordion1Heading2" data-parent="#accordion1">
-          <div class="accordion-item__body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
-          </div>
-        </div>
-      </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button btn" data-toggle="modal" data-target="#regularCleaning">что входит</button>
     </div>
-    <h2>asdasdasd</h2>
-    <div id="accordion2" class="accordion">
-      <div class="accordion-item">
-        <div class="accordion-item__heading" id="accordion2Heading1">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#accordion2Collapse1" aria-expanded="true" aria-controls="accordion2Collapse1">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
-        <div id="accordion2Collapse1" class="collapse" aria-labelledby="accordion2Heading1" data-parent="#accordion2">
-          <div class="accordion-item__body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <div class="accordion-item__heading" id="accordion2Heading2">
-          <h5 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#accordion2Collapse2" aria-expanded="true" aria-controls="accordion2Collapse2">
-              Collapsible Group Item #1
-            </button>
-          </h5>
-        </div>
-        <div id="accordion2Collapse2" class="collapse" aria-labelledby="accordion1Heading2" data-parent="#accordion2">
-          <div class="accordion-item__body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 
-          </div>
-        </div>
-      </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
     </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
+    </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
+    </div>
+
+    <h2>дополнительные услуги</h2>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button btn" data-toggle="modal" data-target="#regularCleaning">что входит</button>
+    </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
+    </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
+    </div>
+    <div class="promo-service">
+      <img class="promo-service__icon" src="img/Frame.svg" alt="">
+      <h3 class="promo-service__text">регулярная уборка</h3>
+      <button class="promo-service__button">что входит</button>
+    </div>
+
+    <p class="text-small">* цену и подробности предоставления услуг уточняйте у менеджера</p>
+
   </div>
 </section>
 
-<section class="">
+<section class="sales">
   <div class="container">
 
+    <partial src="form.html"></partial>
+
+
   </div>
 
 </section>
 
+<partial src="modals.html"></partial>
 <partial src="footer.html"></partial>

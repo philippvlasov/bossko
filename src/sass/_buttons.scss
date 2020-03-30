@@ -1,0 +1,16 @@
+@mixin button {
+  background-color: $color-blue;
+  border: 3px solid $color-blue;
+  outline: none;
+  color: $color-white;
+  cursor: pointer;
+}
+
+@mixin button-highlight {
+    @include button;
+    padding: 8px 50px;
+    background-color: $color-red-btn;
+    border: 3px solid $color-red-btn;
+    margin: 0 auto;
+    display: block; 
+}
