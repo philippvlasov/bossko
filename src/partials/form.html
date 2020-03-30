@@ -1,11 +1,15 @@
-<form action="" method="post">
+<form action="order.php" method="post" id="mainForm">
     <input class="field-item" type="number" name="area" placeholder="Введите площадь (м.кв)">
     <select name="cleaningType" class="field-item" required size="1">
-      <option value="0" selected><span>Выберите тип уборки</span></option>
-      <option value="1">Регулярная уборка</option>
-      <option value="2">Генеральная уборка</option>
-      <option value="3">Уборка после ремонта</option>
-      <option value="3">Мойка окон</option>
+        <option value="0" selected><span>Выберите тип уборки</span></option>
+        <option value="1">Регулярная уборка</option>
+        <option value="2">Генеральная уборка</option>
+        <option value="3">Уборка после ремонта</option>
+        <option value="4">Мойка окон</option>
     </select>
-    <button class="btn-submit field-item" type="submit"  form="">Уборка от: <span class="calc-price">1500</span> Р</button>
-  </form>
+    <button class="btn-submit field-item" type="submit" form="mainForm">Уборка от: <span class="calc-price">1500</span>
+        Р
+    </button>
+</form>
+
+

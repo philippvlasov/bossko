@@ -5,6 +5,13 @@
 @import "buttons";
 @import "variables";
 
+*:hover {
+  outline: none !important;
+  text-decoration: none !important;
+}
+*:focus {
+  outline: none !important;
+}
 //Form start
 form {
   display: flex;
@@ -101,8 +108,13 @@ h2 {
 }
 
 h3 {
-  font-size: inherit;
+  font-size: 18px;
   text-transform: uppercase;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -285,3 +297,47 @@ header {
   
 }
 //Sales section end
+
+//Modal start
+
+.modal-dialog {
+  max-width: 80%;
+  font-size: 14px;
+  .modal-header {
+    border-bottom: 0;
+    padding-left: 7%;
+    h3 {
+      color: $color-blue;
+    }
+  }
+  .modal-body {
+    padding-left: 9%;
+    h4, p {
+      padding-left: 2%;
+    }
+    ul {
+      list-style: none; /* Remove default bullets */
+      padding-inline-start: 0px;
+    }
+    ul li::before {
+      content: "•";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: $color-blue; /* Change the color */
+      font-weight: bold; /* If you want it to be bold */
+      display: inline-block; /* Needed to add space between the bullet and the text */
+      width: 2%; /* Also needed for space (tweak if needed) */
+      //margin-left: -2em; /* Also needed for space (tweak if needed) */
+    }
+    button .arrow-1 {
+      font-size: 18px;
+      color: $color-blue;
+      &:before{
+        content: url("/img/Arrow1.svg");
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+//Modal end
+
+
