@@ -6,6 +6,19 @@
 @import "buttons";
 @import "variables";
 
+//fonts
+@font-face {
+  font-family: "Gotham Pro";
+  font-weight: normal;
+  src: url("../fonts/GOTHAPROMED.OTF") format("opentype");
+}
+@font-face {
+  font-family: "Gotham Pro";
+  font-weight: bold;
+  src: url("../fonts/GOTHAPROBOL.OTF") format("opentype");
+}
+
+
 *:hover {
   outline: none !important;
   text-decoration: none !important;
@@ -76,7 +89,7 @@ body {
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Gotham Pro", sans-serif;
   color: $color-black;
   font-size: 16px;
   background-color: $color-white;
