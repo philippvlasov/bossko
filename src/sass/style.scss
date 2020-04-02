@@ -399,6 +399,43 @@ $icon-size: 144px;
 }
 //Cleaning section end
 
+// slider section start
+.slider{
+  &-header {
+    text-align: center;
+  }
+  &-content {
+    background-color: #F0EDED;
+    height: 295px;
+    padding: 54px 192px 29px;
+    .slider-feedback {
+
+    }
+    .rating {
+      position: fixed;
+      bottom: 29px;
+
+
+    }
+    .star {
+      display: inline-block;
+      margin-top: -2px;
+    }
+  }
+}
+
+.slick-next:before, .slick-prev:before {
+  content: url("/img/slider-arrow-right.svg");
+  display: block;
+}
+
+.slick-prev:before {
+  //transform: rotate(180deg);
+  transform: scale(-1, 1)
+}
+
+// slider section end
+
 //Modal start
 .modal-content {
   border-radius: 0;
