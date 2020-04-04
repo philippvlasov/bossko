@@ -627,3 +627,17 @@ $icon-size: 144px;
   }
 }
 //callbackForm ended
+
+//footer started
+
+footer {
+  background-color: $color-blue;
+  color: $color-white;
+  padding: 18px 0 83px 47px;
+  img {
+    margin-bottom: 17px;
+  }
+  a {
+    color: $color-white;
+  }
+}
