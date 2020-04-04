@@ -10,14 +10,13 @@
 @font-face {
   font-family: "Gotham Pro";
   font-weight: normal;
-  src: url("../fonts/GOTHAPROMED.OTF") format("opentype");
+  src: url("../fonts/GOTHAPROLIG.OTF") format("opentype");
 }
 @font-face {
   font-family: "Gotham Pro";
   font-weight: bold;
   src: url("../fonts/GOTHAPROBOL.OTF") format("opentype");
 }
-
 
 *:hover {
   outline: none !important;
@@ -181,22 +180,74 @@ header {
   background-color: $transparent-blue;
 
   .navbar {
-    align-items: flex-end;
+    align-items: center;
+    &-collapse {
+      flex-wrap: wrap;
+    }
 
     img {
-      margin: 0 0 5px 50px;
+      margin: 0 0 5px 0;
+      @media (min-width: 576px) {
+        margin: 0 0 5px -30px;
+      }
+      @media (min-width: 1200px) {
+        margin: 0 0 5px -35px;
+      }
     }
 
     .navbar-nav {
-      .nav-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+      width: 100%;
+      justify-content: flex-end;
+      order: 2;
+      margin: 15px 0 0 0;
+      @media (min-width: 992px) {
+        margin: 0;
       }
+      &.secondary {
+        @media (min-width: 992px) {
+          margin: 0 0 10px 0;
+        }
+        order: 1;
+      }
+      .nav-item {
+        padding: 0;
+        @media (min-width: 992px) {
+          padding: 0 10px;
+        }
+        &:before {
+          display: none;
+        }
+        &:last-child {
+          @media (min-width: 992px) {
+            width: 180px;
+            padding: 0;
+          }
+        }
+        .nav-link {
+          font-size: 20px;
+          line-height: 24px;
+          padding: 5px 0;
+          color: $color-white;
+          @media (min-width: 992px) {
+            text-align: right;
+            padding: 0;
+          }
 
-      .nav-link {
-        padding: 5px 50px;
-        color: $color-white;
+          &__small {
+            font-size: 16px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+    .navbar-toggler {
+      border-color: transparent;
+      padding-right: 0;
+      margin-right: -6px;
+      &-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255,255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        height: 2.5rem;
+        width: 2.5rem;
       }
     }
   }
@@ -400,38 +451,73 @@ $icon-size: 144px;
 //Cleaning section end
 
 // slider section start
-.slider{
+.slider {
+  .slick-track {
+    display: flex !important;
+  }
+
+  .slick-slide {
+    height: inherit !important;
+    div:not(.rating) {
+      height: 100%;
+    }
+  }
   &-header {
     text-align: center;
   }
   &-content {
-    background-color: #F0EDED;
-    height: 295px;
-    padding: 54px 192px 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0eded;
+    min-height: 295px;
+    padding: 30px 50px 60px;
+    @media (min-width: 992px) {
+      padding: 54px 192px 80px;
+    }
     .slider-feedback {
-
     }
     .rating {
-      position: fixed;
-      bottom: 29px;
-
-
     }
     .star {
       display: inline-block;
       margin-top: -2px;
     }
   }
+  .slick-dots {
+    li {
+      &:before {
+        display: none;
+      }
+      button {
+        &:before {
+          font-size: 15px;
+          color: $color-blue;
+        }
+      }
+    }
+  }
 }
 
-.slick-next:before, .slick-prev:before {
-  content: url("/img/slider-arrow-right.svg");
-  display: block;
-}
-
-.slick-prev:before {
-  //transform: rotate(180deg);
-  transform: scale(-1, 1)
+.slick-arrow {
+  z-index: 5;
+  &:before {
+    content: url("/img/slider-arrow-right.svg");
+    width: 24px;
+    height: 48px;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  &.slick-next {
+    right: 25px;
+  }
+  &.slick-prev {
+    left: 25px;
+    transform: rotate(180deg);
+  }
 }
 
 // slider section end
@@ -474,7 +560,7 @@ $icon-size: 144px;
 //Modal end
 
 //mainForm started
-.mainForm{
+.mainForm {
   .row {
     justify-content: center;
   }

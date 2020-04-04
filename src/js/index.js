@@ -3,7 +3,16 @@ $(document).ready(function () {
         infinite: true,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true
+        arrows: true,
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                arrows: false,
+                dots: true
+              }
+            },
+          ]
     });
 });
 
@@ -13,6 +22,8 @@ $(document).ready(function () {
         this.$area = this.$container.find('[name="area"]');
         this.$type = this.$container.find('[name="cleaningType"]');
         this.$displayPrice = this.$container.find('.calc-price');
+        this.$finalForm = $('#finalForm');
+        this.price = 0;
     };
 
     $.extend(true, Component.prototype, {
@@ -66,12 +77,45 @@ $(document).ready(function () {
         },
 
         _displayPrice(price) {
+            this.price = price;
             this.$displayPrice.text(price);
         },
 
+        _submitForm() {
+            event.preventDefault();
+            if (this.$container.is('#finalForm')) {
+                const data = $(this.$container[0]).serialize();
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: "order.php",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data) {
+                        console.log("SUCCESS : ", data);
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                    }
+                });
+                return;
+            }
+            
+            this.$finalForm.find('[name="area"]').val(this.$area[0].value);
+            this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
+            $('html, body').animate({
+                scrollTop: $( this.$finalForm ).offset().top
+              }, 500);
+        },
+
         _bindInteractions() {
-            this.$area.on('input', this._calculate.bind(this))
-            this.$type.on('input', this._calculate.bind(this))
+            this.$area.on('input', this._calculate.bind(this));
+            this.$type.on('input', this._calculate.bind(this));
+            this.$container.on('submit', this._submitForm.bind(this));
         },
     });
     const $component = $('.mainForm:not(.initialized)');

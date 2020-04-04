@@ -1,21 +1,21 @@
-<form action="order.php" method="post" class="mainForm">
+<form action="order.php" method="post" id="finalForm" class="mainForm">
     <div class="container">
         <div class="row">
-            <input class="field-item col-md-3" type="text" name="name" placeholder="Ваше имя">
-            <input class="field-item col-md-3" type="number" name="name" placeholder="+7 (---) --- -- --">
+            <input required class="field-item col-md-3" type="text" name="name" placeholder="Ваше имя">
+            <input required class="field-item col-md-3" type="number" name="name" placeholder="+7 (---) --- -- --">
             <input class="field-item col-md-3" type="email" name="name" placeholder="Email">
         </div>
         <div class="row">
             <input class="field-item col-md-3" min="0" type="number" name="area" placeholder="Введите площадь (м.кв)">
             <select name="cleaningType" class="field-item col-md-3" required size="1">
-                <option value="0" selected disabled><span>Выберите тип уборки</span></option>
+                <option value="" selected disabled><span>Выберите тип уборки</span></option>
                 <option value="1">Регулярная уборка</option>
                 <option value="2">Генеральная уборка</option>
                 <option value="3">Уборка после ремонта</option>
                 <option value="4">Мойка окон c одной стороны</option>
                 <option value="5">Мойка окон с двух сторон</option>
             </select>
-            <button class="btn-submit field-item col-md-3" type="submit" form="mainForm">Заказать за <span
+            <button class="btn-submit field-item col-md-3" type="submit">Заказать за <span
                     class="calc-price">...</span>
                 Р
             </button>

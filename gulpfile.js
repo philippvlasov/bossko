@@ -102,4 +102,4 @@ exports.html = html;
 exports.js = js;
 exports.del = del;
 exports.serve = gulp.parallel(html, css, js, img, fonts, slickFonts, slickLoader, watchFiles, serve);
-exports.default = gulp.series(del, html, css, js, img);
+exports.default = gulp.series(del, html, css, js, img, fonts, slickFonts, slickLoader);
