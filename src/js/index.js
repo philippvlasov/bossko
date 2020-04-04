@@ -81,37 +81,37 @@ $(document).ready(function () {
             this.$displayPrice.text(price);
         },
 
-        _submitForm() {
-            event.preventDefault();
-            if (this.$container.is('#finalForm')) {
-                const data = $(this.$container[0]).serialize();
-                console.log(data);
-                $.ajax({
-                    type: "POST",
-                    enctype: 'multipart/form-data',
-                    url: "order.php",
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    cache: false,
-                    timeout: 800000,
-                    success: function (data) {
-                        console.log("SUCCESS : ", data);
-                    },
-                    error: function (e) {
-                        console.log("ERROR : ", e);
-                    }
-                });
-                return;
-            }
-            
-            this.$finalForm.find('[name="area"]').val(this.$area[0].value);
-            this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
-            this.$finalForm.find('.calc-price').text(this.price);
-            $('html, body').animate({
-                scrollTop: $( this.$finalForm ).offset().top
-              }, 500);
-        },
+        // _submitForm() {
+        //     event.preventDefault();
+        //     if (this.$container.is('#finalForm')) {
+        //         const data = $(this.$container[0]).serialize();
+        //         console.log(data);
+        //         $.ajax({
+        //             type: "POST",
+        //             enctype: 'multipart/form-data',
+        //             url: "order.php",
+        //             data: data,
+        //             processData: false,
+        //             contentType: false,
+        //             cache: false,
+        //             timeout: 800000,
+        //             success: function (data) {
+        //                 console.log("SUCCESS : ", data);
+        //             },
+        //             error: function (e) {
+        //                 console.log("ERROR : ", e);
+        //             }
+        //         });
+        //         return;
+        //     }
+        //
+        //     this.$finalForm.find('[name="area"]').val(this.$area[0].value);
+        //     this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
+        //     this.$finalForm.find('.calc-price').text(this.price);
+        //     $('html, body').animate({
+        //         scrollTop: $( this.$finalForm ).offset().top
+        //       }, 500);
+        // },
 
         _bindInteractions() {
             this.$area.on('input', this._calculate.bind(this));
