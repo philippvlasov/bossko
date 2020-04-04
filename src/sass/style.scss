@@ -561,6 +561,35 @@ $icon-size: 144px;
     color: $color-blue;
   }
 }
+
+
+#callback {
+  .modal-content{
+    margin: 0 auto;
+    width: 36%;
+    border: none;
+    .modal-body {
+      padding: 0;
+      .close {
+        position: absolute;
+        right: 12px;
+        span {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 13px;
+          text-transform: lowercase;
+          color: $color-white;
+        }
+      }
+      form {
+        padding-top: 35px;
+        margin-right: 0;
+        margin-left: 0;
+      }
+    }
+  }
+
+}
 //Modal end
 
 //mainForm started
@@ -569,3 +598,21 @@ $icon-size: 144px;
     justify-content: center;
   }
 }
+//mainForm ended
+
+//callbackForm started
+#callbackForm {
+  flex-direction: column;
+  align-items: center;
+  background-color: $color-blue;
+  input {
+
+  }
+  .btn-submit {
+    border: 3px solid $color-white;
+  }
+  .field-item {
+    margin: 0 15px 35px 15px;
+  }
+}
+//callbackForm ended
