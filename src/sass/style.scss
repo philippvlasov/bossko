@@ -478,6 +478,7 @@ $icon-size: 144px;
     .slider-feedback {
     }
     .rating {
+      text-align: center;
     }
     .star {
       display: inline-block;
@@ -516,7 +517,10 @@ $icon-size: 144px;
   }
   &.slick-prev {
     left: 25px;
-    transform: rotate(180deg);
+    &:before {
+      transform: rotate(180deg);
+    }
+    
   }
 }
 
