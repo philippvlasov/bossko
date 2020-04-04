@@ -64,6 +64,11 @@ function slickLoader() {
         .pipe(gulp.dest('docs/css/'));
 }
 
+function php() {
+    return gulp.src('php/*')
+        .pipe(gulp.dest('docs'));
+}
+
 function img() {
     return gulp.src('src/img/*')
         .pipe(gulpIf(isProd, imagemin()))
@@ -101,5 +106,5 @@ exports.css = css;
 exports.html = html;
 exports.js = js;
 exports.del = del;
-exports.serve = gulp.parallel(html, css, js, img, fonts, slickFonts, slickLoader, watchFiles, serve);
-exports.default = gulp.series(del, html, css, js, img, fonts, slickFonts, slickLoader);
+exports.serve = gulp.parallel(html, css, js, img, fonts, slickFonts, slickLoader, watchFiles, serve, php);
+exports.default = gulp.series(del, html, css, js, img, fonts, slickFonts, slickLoader, php);
