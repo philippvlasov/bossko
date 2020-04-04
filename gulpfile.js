@@ -65,7 +65,7 @@ function slickLoader() {
 }
 
 function php() {
-    return gulp.src('php/*')
+    return gulp.src('src/php/*')
         .pipe(gulp.dest('docs'));
 }
 
@@ -93,6 +93,7 @@ function watchFiles() {
     gulp.watch('src/**/*.scss', gulp.series(css, browserSyncReload));
     gulp.watch('src/**/*.js', gulp.series(js, browserSyncReload));
     gulp.watch('src/img/**/*.*', gulp.series(img));
+    gulp.watch('src/php/**/*.*', gulp.series(php));
 
     return;
 }
