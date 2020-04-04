@@ -107,6 +107,7 @@ $(document).ready(function () {
             
             this.$finalForm.find('[name="area"]').val(this.$area[0].value);
             this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
+            this.$finalForm.find('.calc-price').text(this.price);
             $('html, body').animate({
                 scrollTop: $( this.$finalForm ).offset().top
               }, 500);
