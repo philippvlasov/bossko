@@ -6,13 +6,13 @@ $(document).ready(function () {
         arrows: true,
         responsive: [
             {
-              breakpoint: 992,
-              settings: {
-                arrows: false,
-                dots: true
-              }
+                breakpoint: 992,
+                settings: {
+                    arrows: false,
+                    dots: true
+                }
             },
-          ]
+        ]
     });
 });
 
@@ -85,7 +85,8 @@ $(document).ready(function () {
             event.preventDefault();
             if (this.$container.is('#finalForm')) {
                 const form = $(this.$container)[0];
-				const data = new FormData(form);
+                const data = new FormData(form);
+
                 $.ajax({
                     type: "POST",
                     enctype: 'multipart/form-data',
@@ -97,22 +98,29 @@ $(document).ready(function () {
                     timeout: 800000,
                     success: function (data) {
                         console.log("SUCCESS : ", data);
-                        $('#success').modal('show');
+                        const $modal = $('#success');
+                        const result = $($modal[0]).find('.result');
+                        result.text('Your result text for success');
+                        $modal.modal('show');
                     },
                     error: function (e) {
                         console.log("ERROR : ", e);
-                        $('#fail').modal('show');
+                        const $modal = $('#fail');
+                        const result = $($modal[0]).find('.result');
+                        result.text('Your result text for success');
+                        $modal.modal('show');
+
                     }
                 });
                 return;
             }
-        
+
             this.$finalForm.find('[name="area"]').val(this.$area[0].value);
             this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
             this.$finalForm.find('.calc-price').text(this.price);
             $('html, body').animate({
-                scrollTop: $( this.$finalForm ).offset().top
-              }, 500);
+                scrollTop: $(this.$finalForm).offset().top
+            }, 500);
         },
 
         _bindInteractions() {
@@ -148,7 +156,7 @@ $(document).ready(function () {
             console.log(this.$container.attr('href'));
             $('html, body').animate({
                 scrollTop: $(`.${targetSection}`).offset().top
-              }, 500);
+            }, 500);
         },
 
         _bindInteractions() {
