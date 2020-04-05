@@ -19,17 +19,14 @@ $message = "$subjectOrder \r\nИмя: " . $data['name']
 if (checkEmpty($data) && filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
     sendMessageToTelegram($token, $chat_id_list, $message);
     sendMessageToMail($to, $subjectOrder, $message);
+    echo 'Ваша заявка принята. Мы перезвоним Вам в течение 9 минут!';
 } else {
     // TODO вывести ошибку в аякс
-    var_dump('empty');
-    die;
+    echo 'Что-то пошло не так. Проверьте правильнось введенных данных';
+
 }
 
 
 
 
-
-//echo json_encode(array('yyy' => true,
-//    'userInfo' => 1,
-//    'name' => ($_POST['data'])));
 

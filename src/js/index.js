@@ -100,14 +100,14 @@ $(document).ready(function () {
                         console.log("SUCCESS : ", data);
                         const $modal = $('#success');
                         const result = $($modal[0]).find('.result');
-                        result.text('Your result text for success');
+                        result.text(data);
                         $modal.modal('show');
                     },
                     error: function (e) {
                         console.log("ERROR : ", e);
                         const $modal = $('#fail');
                         const result = $($modal[0]).find('.result');
-                        result.text('Your result text for success');
+                        result.text('Произошла ошиббка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
                         $modal.modal('show');
 
                     }
