@@ -102,7 +102,6 @@ $(document).ready(function () {
                     cache: false,
                     timeout: 800000,
                     success: function (data) {
-                        console.log("SUCCESS : ", data);
                         const $modal = $('#success');
                         const $modalCleaning = $('.cleaning-modals');
                         const result = $($modal[0]).find('.result');
@@ -111,7 +110,6 @@ $(document).ready(function () {
                         $modal.modal('show');
                     },
                     error: function (e) {
-                        console.log("ERROR : ", e);
                         const $modal = $('#fail');
                         const $modalCleaning = $('.cleaning-modals');
                         const result = $($modal[0]).find('.result');
@@ -195,7 +193,6 @@ $('#callback').on('submit', function () {
         cache: false,
         timeout: 800000,
         success: function (data) {
-            console.log("SUCCESS : ", data);
             const $modal = $('#success');
             const $callbackModal = $('#callback');
             const result = $($modal[0]).find('.result');
@@ -204,7 +201,6 @@ $('#callback').on('submit', function () {
             $modal.modal('show');
         },
         error: function (e) {
-            console.log("ERROR : ", e);
             const $modal = $('#fail');
             const result = $($modal[0]).find('.result');
             const $callbackModal = $('#callback');
