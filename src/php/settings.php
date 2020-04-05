@@ -1,7 +1,7 @@
 <?php
 //telegram
-$token = '561353685:AAFVHFTMIychcLnJzi1MziPwGYng3tYHlqI';  // token bot telegram
-$chat_id_list = ['-462655866']; // chat id telegram
+$token = '1218435378:AAFLSFSHNzR4nObEnEEknE8yxWjayAzWFTo';  // token bot telegram
+$chat_id_list = ['-495360242']; // chat id telegram
 
 
 //mail

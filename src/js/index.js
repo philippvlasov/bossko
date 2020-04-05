@@ -72,13 +72,15 @@ $(document).ready(function () {
                     break;
             }
             if (!areaValue || areaValue == 0) {
-                price = '...';
+                price = '1500';
             }
             this._displayPrice(price);
         },
 
         _displayPrice(price) {
-            this.$hiddenInput[0].value = price;
+            this.$hiddenInput.each(function (key, value) {
+                value.value = price;
+            });
             this.price = price;
             this.$displayPrice.text(price);
             this.$hiddenInput.value = price;
