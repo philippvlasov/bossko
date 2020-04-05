@@ -107,7 +107,7 @@ $(document).ready(function () {
                         console.log("ERROR : ", e);
                         const $modal = $('#fail');
                         const result = $($modal[0]).find('.result');
-                        result.text('Произошла ошиббка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
+                        result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
                         $modal.modal('show');
 
                     }
@@ -146,7 +146,7 @@ $('#callback').on('submit', function () {
     $.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
-        url: "order.php",
+        url: "callback.php",
         data: data,
         processData: false,
         contentType: false,
@@ -155,15 +155,17 @@ $('#callback').on('submit', function () {
         success: function (data) {
             console.log("SUCCESS : ", data);
             const $modal = $('#success');
+            const $callbackModal = $('#callback');
             const result = $($modal[0]).find('.result');
-            result.text('Your result text for success');
+            result.text(data);
+            $callbackModal.modal('hide');
             $modal.modal('show');
         },
         error: function (e) {
             console.log("ERROR : ", e);
             const $modal = $('#fail');
             const result = $($modal[0]).find('.result');
-            result.text('Your result text for success');
+            result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
             $modal.modal('show');
 
         }
