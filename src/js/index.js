@@ -138,36 +138,69 @@ $(document).ready(function () {
     });
 }(jQuery));
 
-(function ($) {
-    const Component = function (container) {
-        this.$container = $(container);
-    };
+$('#callback').on('submit', function () {
+    event.preventDefault();
+    const form = $('#callback').find('form')[0];
+    const data = new FormData(form);
 
-    $.extend(true, Component.prototype, {
-        init() {
-            this._bindInteractions();
-            this.$container.addClass('initialized');
+    $.ajax({
+        type: "POST",
+        enctype: 'multipart/form-data',
+        url: "order.php",
+        data: data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        timeout: 800000,
+        success: function (data) {
+            console.log("SUCCESS : ", data);
+            const $modal = $('#success');
+            const result = $($modal[0]).find('.result');
+            result.text('Your result text for success');
+            $modal.modal('show');
         },
+        error: function (e) {
+            console.log("ERROR : ", e);
+            const $modal = $('#fail');
+            const result = $($modal[0]).find('.result');
+            result.text('Your result text for success');
+            $modal.modal('show');
 
-        _scrollTo() {
-            event.preventDefault();
-            event.stopPropagation();
-            const targetSection = this.$container.attr('href');
-            console.log(this.$container.attr('href'));
-            $('html, body').animate({
-                scrollTop: $(`.${targetSection}`).offset().top
-            }, 500);
-        },
-
-        _bindInteractions() {
-            this.$container.on('click', this._scrollTo.bind(this));
-        },
+        }
     });
-    const $component = $('.scroll-button:not(.initialized)');
-    let instance;
+    return;
+})
 
-    $component.each((i, item) => {
-        instance = new Component(item);
-        instance.init();
-    });
-}(jQuery));
+    (function ($) {
+        const Component = function (container) {
+            this.$container = $(container);
+        };
+
+        $.extend(true, Component.prototype, {
+            init() {
+                this._bindInteractions();
+                this.$container.addClass('initialized');
+            },
+
+            _scrollTo() {
+                event.preventDefault();
+                event.stopPropagation();
+                const targetSection = this.$container.attr('href');
+                console.log(this.$container.attr('href'));
+                $('html, body').animate({
+                    scrollTop: $(`.${targetSection}`).offset().top
+                }, 500);
+            },
+
+            _bindInteractions() {
+                this.$container.on('click', this._scrollTo.bind(this));
+            },
+        });
+        const $component = $('.scroll-button:not(.initialized)');
+        let instance;
+
+        $component.each((i, item) => {
+            instance = new Component(item);
+            instance.init();
+        });
+    }(jQuery));
