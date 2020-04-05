@@ -81,6 +81,7 @@ form {
     text-align-last: center;
     option {
       padding: 3px 7px;
+      background-color: $color-white;
     }
   }
 }
@@ -665,5 +666,9 @@ footer {
   }
   a {
     color: $color-white;
+  }
+  .nav-link {
+    padding: 0;
+    cursor: pointer;
   }
 }
