@@ -34,11 +34,11 @@ $(document).ready(function () {
 
         _calculate() {
             const areaValue = this.$area[0].value;
-            const cleaningType = parseInt(this.$type[0].value);
+            const cleaningType = this.$type[0].value;
             let price;
 
             switch (cleaningType) {
-                case 1:
+                case 'Регулярная уборка':
                     if (areaValue > 0 && areaValue <= 300) {
                         price = 5500;
                     } else if (areaValue > 300 && areaValue <= 600) {
@@ -55,16 +55,16 @@ $(document).ready(function () {
                         price = 37000;
                     }
                     break;
-                case 2:
+                case 'Генеральная уборка':
                     price = areaValue * 140;
                     break;
-                case 3:
+                case 'Уборка после ремонта':
                     price = areaValue * 190;
                     break;
-                case 4:
+                case 'Мойка окон c одной стороны':
                     price = areaValue * 150;
                     break;
-                case 5:
+                case 'Мойка окон с двух сторон':
                     price = areaValue * 250;
                     break;
                 default:
@@ -81,37 +81,39 @@ $(document).ready(function () {
             this.$displayPrice.text(price);
         },
 
-        // _submitForm() {
-        //     event.preventDefault();
-        //     if (this.$container.is('#finalForm')) {
-        //         const data = $(this.$container[0]).serialize();
-        //         console.log(data);
-        //         $.ajax({
-        //             type: "POST",
-        //             enctype: 'multipart/form-data',
-        //             url: "order.php",
-        //             data: data,
-        //             processData: false,
-        //             contentType: false,
-        //             cache: false,
-        //             timeout: 800000,
-        //             success: function (data) {
-        //                 console.log("SUCCESS : ", data);
-        //             },
-        //             error: function (e) {
-        //                 console.log("ERROR : ", e);
-        //             }
-        //         });
-        //         return;
-        //     }
-        //
-        //     this.$finalForm.find('[name="area"]').val(this.$area[0].value);
-        //     this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
-        //     this.$finalForm.find('.calc-price').text(this.price);
-        //     $('html, body').animate({
-        //         scrollTop: $( this.$finalForm ).offset().top
-        //       }, 500);
-        // },
+        _submitForm() {
+            event.preventDefault();
+            if (this.$container.is('#finalForm')) {
+                const data = $(this.$container[0]).serialize();
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    enctype: 'multipart/form-data',
+                    url: "order.php",
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    timeout: 800000,
+                    success: function (data) {
+                        console.log("SUCCESS : ", data);
+                        $('#success').modal('show');
+                    },
+                    error: function (e) {
+                        console.log("ERROR : ", e);
+                        $('#fail').modal('show');
+                    }
+                });
+                return;
+            }
+        
+            this.$finalForm.find('[name="area"]').val(this.$area[0].value);
+            this.$finalForm.find('[name="cleaningType"]').val(this.$type[0].value);
+            this.$finalForm.find('.calc-price').text(this.price);
+            $('html, body').animate({
+                scrollTop: $( this.$finalForm ).offset().top
+              }, 500);
+        },
 
         _bindInteractions() {
             this.$area.on('input', this._calculate.bind(this));
