@@ -84,8 +84,8 @@ $(document).ready(function () {
         _submitForm() {
             event.preventDefault();
             if (this.$container.is('#finalForm')) {
-                const data = $(this.$container[0]).serialize();
-                console.log(data);
+                const form = $(this.$container)[0];
+				const data = new FormData(form);
                 $.ajax({
                     type: "POST",
                     enctype: 'multipart/form-data',
