@@ -129,3 +129,37 @@ $(document).ready(function () {
         instance.init();
     });
 }(jQuery));
+
+(function ($) {
+    const Component = function (container) {
+        this.$container = $(container);
+    };
+
+    $.extend(true, Component.prototype, {
+        init() {
+            this._bindInteractions();
+            this.$container.addClass('initialized');
+        },
+
+        _scrollTo() {
+            event.preventDefault();
+            event.stopPropagation();
+            const targetSection = this.$container.attr('href');
+            console.log(this.$container.attr('href'));
+            $('html, body').animate({
+                scrollTop: $(`.${targetSection}`).offset().top
+              }, 500);
+        },
+
+        _bindInteractions() {
+            this.$container.on('click', this._scrollTo.bind(this));
+        },
+    });
+    const $component = $('.scroll-button:not(.initialized)');
+    let instance;
+
+    $component.each((i, item) => {
+        instance = new Component(item);
+        instance.init();
+    });
+}(jQuery));
