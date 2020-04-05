@@ -99,15 +99,19 @@ $(document).ready(function () {
                     success: function (data) {
                         console.log("SUCCESS : ", data);
                         const $modal = $('#success');
+                        const $modalCleaning = $('.cleaning-modals');
                         const result = $($modal[0]).find('.result');
                         result.text(data);
+                        $modalCleaning.modal('hide');
                         $modal.modal('show');
                     },
                     error: function (e) {
                         console.log("ERROR : ", e);
                         const $modal = $('#fail');
+                        const $modalCleaning = $('.cleaning-modals');
                         const result = $($modal[0]).find('.result');
-                        result.text('Произошла ошиббка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
+                        result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
+                        $modalCleaning.modal('hide');
                         $modal.modal('show');
 
                     }
@@ -198,7 +202,9 @@ $('#callback').on('submit', function () {
             console.log("ERROR : ", e);
             const $modal = $('#fail');
             const result = $($modal[0]).find('.result');
+            const $callbackModal = $('#callback');
             result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
+            $callbackModal.modal('hide');
             $modal.modal('show');
 
         }
