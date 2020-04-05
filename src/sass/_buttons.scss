@@ -4,6 +4,21 @@
   outline: none;
   color: $color-white;
   cursor: pointer;
+  -webkit-box-shadow: 0px 6px 0px 0px rgba(29,70,176,1);
+  -moz-box-shadow: 0px 6px 0px 0px rgba(29,70,176,1);
+  box-shadow: 0px 6px 0px 0px rgba(29,70,176,1);
+  height: 43px;
+  border-radius: 4px;
+  @media (min-width: 992px) {
+    &:hover {
+      background-color: #0E67B0;
+      border: 3px solid #0E67B0;
+      -webkit-box-shadow: 0px 6px 0px 0px $color-blue;
+      -moz-box-shadow: 0px 6px 0px 0px $color-blue;
+      box-shadow: 0px 6px 0px 0px $color-blue;
+    }
+  }
+
 }
 
 @mixin button-highlight {
@@ -14,4 +29,16 @@
     margin: 0 auto;
     display: block; 
     text-transform: uppercase;
+    -webkit-box-shadow: 0px 6px 0px 0px rgba(227,9,41,1);
+    -moz-box-shadow: 0px 6px 0px 0px rgba(227,9,41,1);
+    box-shadow: 0px 6px 0px 0px rgba(227,9,41,1);
+  @media (min-width: 992px) {
+    &:hover {
+      background-color: #FC2D2B;
+      border: 3px solid #FC2D2B;
+      -webkit-box-shadow: 0px 6px 0px 0px $color-red-btn;
+      -moz-box-shadow: 0px 6px 0px 0px $color-red-btn;
+      box-shadow: 0px 6px 0px 0px $color-red-btn;
+    }
+  }
 }
