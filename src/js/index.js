@@ -23,6 +23,7 @@ $(document).ready(function () {
         this.$type = this.$container.find('[name="cleaningType"]');
         this.$displayPrice = this.$container.find('.calc-price');
         this.$finalForm = $('#finalForm');
+        this.$hiddenInput = $('.hidden-input');
         this.price = 0;
     };
 
@@ -77,8 +78,10 @@ $(document).ready(function () {
         },
 
         _displayPrice(price) {
+            this.$hiddenInput[0].value = price;
             this.price = price;
             this.$displayPrice.text(price);
+            this.$hiddenInput.value = price;
         },
 
         _submitForm() {
