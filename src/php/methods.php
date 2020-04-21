@@ -7,9 +7,7 @@ function checkEmpty(array $array)
 {
     foreach ($array as $a) {
         if (empty($a)) {
-            // TODO вывести ошибку в аякс
-            var_dump('something went wrong');
-            die();
+           return false;
         }
         return true;
     }
