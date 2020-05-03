@@ -237,15 +237,17 @@ header {
       .nav-item {
         padding: 0;
         @media (min-width: 992px) {
-          padding: 0 10px;
+          padding: 0 2%;
         }
         &:before {
           display: none;
         }
         &:last-child {
           @media (min-width: 992px) {
-            width: 184px;
+            width: 220px;
             padding: 0;
+            //padding: 0 0 0 2%;
+            margin-left: 30px;
           }
         }
         .nav-link {
@@ -259,8 +261,30 @@ header {
           }
 
           &__small {
-            font-size: 20px;
+            font-size: 18px;
             line-height: 24px;
+          }
+          &__mail::before {
+            content: url("/img/mail.svg");
+            position: absolute;
+            left: -30px;
+            top: 2px;
+            bottom: 0;
+            margin: auto;
+            @media (max-width: 991px) {
+              content: "";
+            }
+          }
+          &__phone::before {
+            content: url("/img/phone.svg");
+            position: absolute;
+            left: 0px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            @media (max-width: 991px) {
+              content: "";
+            }
           }
         }
       }
