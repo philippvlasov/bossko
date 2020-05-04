@@ -237,7 +237,7 @@ header {
       .nav-item {
         padding: 0;
         @media (min-width: 992px) {
-          padding: 0 2%;
+          padding: 0 18px;
         }
         &:before {
           display: none;
@@ -710,5 +710,8 @@ footer {
   .nav-link {
     padding: 0;
     cursor: pointer;
+  }
+  .copywrite {
+    font-size: 16px;
   }
 }

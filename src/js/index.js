@@ -204,7 +204,7 @@ $('#callback').on('submit', function () {
             const $modal = $('#fail');
             const result = $($modal[0]).find('.result');
             const $callbackModal = $('#callback');
-            result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7-9999-777-550');
+            result.text('Произошла ошибка отправки формы. Свяжитесь с нами по телефону +7(499)288-85-29');
             $callbackModal.modal('hide');
             $modal.modal('show');
 
